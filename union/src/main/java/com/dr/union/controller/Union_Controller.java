@@ -66,5 +66,20 @@ public ResponseEntity<Union_Entity> updateById(@PathVariable("id") int id,@Reque
 	return new ResponseEntity<Union_Entity>(HttpStatus.NOT_MODIFIED);
 	
 }
+
+@RequestMapping(value="/union/controller/deleteByMemberId/{id}",method=RequestMethod.DELETE)
+public ResponseEntity<Union_Entity>
+ deleteByMemberId(@PathVariable("id") int id
+		 )
+ {
+	Union_Entity entity=dao.getEmployeeId(id);
 	
+	if(entity!=null)
+	{
+		dao.deleteMember(id);
+		return new ResponseEntity("Memeber("+entity.getName()+")Deleted Scucessfully",HttpStatus.OK);
+	}
+	
+	return new ResponseEntity(HttpStatus.NO_CONTENT);
+ }
 }

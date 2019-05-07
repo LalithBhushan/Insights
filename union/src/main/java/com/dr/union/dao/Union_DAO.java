@@ -38,6 +38,10 @@ public class Union_DAO {
 			return repo.save(entity);
 		}
 		
+		public void deleteMember(int id)
+		{
+			repo.deleteById(id);
+		}
 		
 	}
 
