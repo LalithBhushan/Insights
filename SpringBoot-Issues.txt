@@ -1,0 +1,7 @@
+SchemaIssue:
+
+spring.jpa.properties.hibernate.default_schema=demo1
+
+SerlizationIssue:
+
+spring.jackson.serialization.fail-on-empty-beans=false

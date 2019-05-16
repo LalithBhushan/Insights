@@ -1,0 +1,49 @@
+1:cloud practioner certification CP-F
+2:Sloution Architect Associate   SA-A
+3:Devloper Associate -Dev-A
+4:SysOps Administartor SO-A
+5:Securtiy Sec-s
+6:BigData BD-S
+7:Advance Networking AN-S
+8:Devops Engineer Professional-DO-P
+9:Solution Architect Professional-SA-P
+
+
+AWS Certified Cloud Practitioner
+AWS Certified Developer – Associate
+AWS Certified SysOps Administrator – Associate
+AWS Certified Solutions Architect – Associate
+AWS Certified DevOps Engineer – Professional
+AWS Certified Solutions Architect – Professional
+AWS Certified Big Data – Specialty
+AWS Certified Advanced Networking – Specialty
+AWS Certified Security – Specialty
+
+
+Practise in Qwik Labs
+
+AWS documentation
+
+AWS FAQs 
+
+Aws WhitePapers
+
+AWS ReInvent Videos
+
+AWS SlideShare
+
+Aws Architecture Centers
+
+Aws answers
+
+AWS Cost Caliculator
+
+AWS Release Notes
+
+SQS standard version
+
+ Support & pricing came quite a lot-Imp
+
+
+
+https://mylearning.accenture.com/accenture/lang-en/management/LMS_ActDetails.asp?ActivityId=1568589&UserMode=0

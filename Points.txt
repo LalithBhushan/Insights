@@ -1,0 +1,286 @@
+Constructors are used to intialize the non static varaibles, interface we cant use of non static 
+ varaibles so there we cant create constructors.
+
+ Every variable in interface are implicitly public, static, and final.
+
+Constructors are used to intailize the non static varibles in class
+class Demo{
+      int  value1;
+      int  value2;
+      Demo(){
+         value1 = 10;
+         value2 = 20;
+         System.out.println("Inside Constructor");
+     }
+ 
+     public void display(){
+        System.out.println("Value1 === "+value1);
+        System.out.println("Value2 === "+value2);
+    }
+ 
+   public static void main(String args[]){
+       Demo d1 = new Demo();
+      d1.display();
+  }
+}
+
+Important Reasons For Using Interfaces
+
+Interfaces are used to achieve abstraction.
+Designed to support dynamic method resolution at run time
+It helps you to achieve loose coupling.
+Allows you to separate the definition of a method from the inheritance hierarchy
+Important Reasons For Using Abstract Class
+
+Abstract classes offer default functionality for the subclasses.
+Provides a template for future specific classes
+Helps you to define a common interface for its subclasses
+Abstract class allows code reusability.
+
+
+When a method is called, a frame is created on the top of the stack.
+Once a method has completed execution, the flow of control returns to the calling method and its corresponding stack frame is flushed.
+Local variables are created in the stack
+Instance variables are created in the heap & are part of the object they belong to.
+Reference variables are created in the stack.
+
+
+
+Objects abstract/hide the total the internal fuctioning of the class these type of behaviour is called abstraction.
+
+However, Overloading methods on return type is possible in cases where data type of the function being called is explicitly specified.
+ Look at the examples below :
+
+Dynamic method dispatch or run time polymorphism or overriding
+
+
+Overloaded methods are bonded using static binding while overridden methods are bonded using dynamic binding at runtime.
+
+
+class Animal
+{
+
+eat()
+sleep()
+repeat()
+}
+
+class Mamal extends Animal
+{
+starve()
+}
+
+class Loin extends Animal
+{
+
+@overidden
+sleep();
+
+}
+
+Animal king=new Loin();
+
+king.eat()
+
+
+
+
+encapsulation is the way in which we can achieve data hiding.
+
+Inheritance IS-A relationship.
+
+Static is class level
+
+Private cant be 
+
+main method can be invoked in abstract class.
+
+
+in inner class abstract & private can be invoked.
+
+
+Exposing The API is the basic functionality of the interface.
+
+Combination of try ,catch and rules of catch,try and custom exception.
+
+
+
+POLYMORHISM:
+
+Refernce variable can point to the object to the same class or object to the sub class.
+class Animal
+{
+
+eat()
+sleep()
+repeat()
+}
+
+class Loin extends Animal
+{
+
+@overidden
+sleep();
+
+}
+
+Animal king=new Loin();
+
+king.eat()
+
+If a variable is pointing to the object of the subclass only methods inherited and overridden methods
+from the original class will be available.
+
+
+Basically object is cloned to duplicate object because when we dont want to change the state of the existinf object.
+
+We can clone object in 2 ways 
+
+By copying constructor.
+ By using cloning Method.
+
+In case of shallow copy only the main object will be 
+
+
+To know the hash value of the hashcode().
+ native is in non java lang
+hashing technique in collection framework.
+
+getClass() will return class type and meta information of the class , default access memory of the class.metaspace memory it is called.
+
+String represenation of the object.
+
+eqvals():
+
+The deafault implementation of this method is to compare the ref
+
+
+clone() is used to create in exact copy of the object in less time.
+
+
+Default implemenation of cloning is shallow cloning.
+
+Throw ecxeption manually i.e explicitly.
+
+when we are creating custom exception then we will use "throw" keyword.
+
+throws is method level exception it will be propageted to the one who call the method.
+Custom implementation of clonong should in deep cloning.
+
+runtime exception its not mandatory try block to throw the exception.
+
+
+Rules of overriding method with exceptions
+
+try with resources. we can define multiple excetions in ctch block.
+
+String is final class in java.
+Strings treated as objects.
+by default string implements serlizable.
+
+== eqval operator
+
+Threadsafe and threadsafe 
+
+hashcode(),eqvals(),toString() are not overidden in StringBuffer and builder
+
+Serilization is a marker interface .
+
+
+processes of storing state of object  anywhere in byte stream.
+
+Creating a new instance in heap memory by reading in filesystem.
+
+Static members cant be serlization.
+
+Transisent key applied to memebers we will get default value for this memebrs.
+
+constructor dont partcipate in serialization and deserlization but it is invoked in extrenalization.
+
+https://www.javamadesoeasy.com/2015/02/serialization-top-25-interview.html 
+
+subclass is implements serlizable then not he superclass .
+
+enum.
+
+
+Here is where we need serialVersionUID. 
+It is used during deserialization to verify that the sender ( the person who serializes) and receiver ( the person who deserializes) of a serialized object have loaded classes for that object that are compatible with respect to serialization.
+ In case a receiver has loaded a class for the object that has a different serialVersionUID than that used to serialize, then deserialization will end with InvalidClassException. A serializable class can declare its own serialVersionUID explicitly by declaring a field named “serialVersionUID” that must be static, final, and of type long:.
+
+But, if Externalizable has been implemented - constructor is called during DeSerialization process.
+
+HashMap:
+
+Internally hashmap arraylist of nodes each node is a linked list.
+
+Index of null is zero.
+
+Adding sum of the ascii values of the key and devide by the size of the array the reminder value will be the value of the index
+ Index number= sum ASCII codes Mod size of array.
+
+For numbers Key Mod n
+
+If Its a large number it will add the numbers in sum of 2numbers.
+
+If two objects are colliding in one index in a array then second object will move to next index. This type of indexing is called linear probing. plus 3 rehash
+
+Pointer will be there in node which will be pointer to other node in the linked list.
+
+
+Chaining method is other name of linked list. closed addressing.
+
+Travering method will be used to find the node in the linked list.
+
+
+legacy classes before collections
+
+https://java2novice.com/java-interview-programs/arraylist-implementation/ 
+
+Timecomplex in linkedlist
+
+jvm finds the bucket using hashcode value.
+
+eqvals() method compare the key of the node 
+
+if we wont  overide hashcode() and eqvlas() properly we wont get proper searched element.
+
+Synchronization hashmap:
+It will maintain the lock at the object level. So if you want to perform any operation like put/get then you have to acquire the lock first.
+At the same time, other threads are not allowed to perform any operation. So at a time, only one thread can operate on this.
+So the waiting time will increase here. 
+We can say that performance is relatively low when you comparing with ConcurrentHashMap.
+
+As wrapper classes and String are good for keys in map.
+
+https://java2novice.com/java-interview-programs/arraylist-implementation/
+https://javarevisited.blogspot.com/2011/02/how-hashmap-works-in-java.html 
+ 
+synchronizedmap is a method where we can send map parameter to syncgronized.   
+
+It locks the entire object. it allows only one thread at a time.
+
+Concurrentmodificationexception 
+
+in concurrent hashmap it will be segment rather than bucket,it doesnt lock entire map object threads can do operations on diff segments
+
+https://javarevisited.blogspot.com/2011/02/how-hashmap-works-in-java.html 
+
+http://javaconceptoftheday.com/how-hashset-works-internally-in-java/ 
+
+
+https://www.youtube.com/watch?v=UnaNQgzw4zY
+
+https://www.youtube.com/watch?v=UcPuWY0wn3w 
+
+
+
+
+http://www.java67.com/2013/07/15-java-enum-interview-questions-amswers-for-experienced-programmers.html 
+ 
+
+ 
+
+
+
+

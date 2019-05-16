@@ -1,0 +1,6 @@
+main agenda of anonymous inner class we can overide a function without creating a subclass.
+
+An anonymous class cannot have a constructor. so, there is no need to pass parameters to an anonymous class while instantiating it.
+Can be instantiated only once. 
+Cannot be static. 
+Has no name. 
