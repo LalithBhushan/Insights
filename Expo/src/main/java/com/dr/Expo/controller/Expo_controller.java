@@ -2,6 +2,8 @@ package com.dr.Expo.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,7 +35,7 @@ public class Expo_controller {
 	}
 	
 	@RequestMapping(value="controller/createCustomer",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.TEXT_PLAIN_VALUE)
-	public ResponseEntity<String> createCustomer(@RequestBody Expo_Customer ec)
+	public ResponseEntity<String> createCustomer(@Valid @RequestBody Expo_Customer ec)
 	
 	{
 		dao.saved(ec);
@@ -62,6 +64,7 @@ public class Expo_controller {
 		{	customer.getCustomer_address();
 		customer.getCustomer_name();
 		customer.getCustomer_dateOfOrder();
+		customer.getBillAmount();
 		
 		return new ResponseEntity <Expo_Customer> (dao.updateById(ec),HttpStatus.OK);
 		}

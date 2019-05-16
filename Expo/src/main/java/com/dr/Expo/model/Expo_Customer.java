@@ -7,10 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "expo_customer")
 public class Expo_Customer {
 	
+	
+	@NotEmpty(message="Customer Name Is Required")
 	@Column(name="customer_name")
 	private String customer_name;
  
@@ -18,11 +24,35 @@ public class Expo_Customer {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customer_id;
 	
+	@NotNull(message="Customer Address  Is Required")
 	@Column(name="customer_address")
 	private String customer_address;
 	
+	@NotNull(message="Date Should Be In YYYY-MM-DD Format ")
 	@Column(name="customer_dateOfOrder")
 private Date customer_dateOfOrder;
+	
+	@Column(name="billAmount")
+	private int billAmount;
+
+public Expo_Customer(@NotNull(message = "Customer Name Is Required") String customer_name, int customer_id,
+			@NotNull(message = "Customer Address  Is Required") String customer_address,
+			@NotNull(message = "Date Should Be In YYYY-MM-DD Format ") Date customer_dateOfOrder, int billAmount) {
+		super();
+		this.customer_name = customer_name;
+		this.customer_id = customer_id;
+		this.customer_address = customer_address;
+		this.customer_dateOfOrder = customer_dateOfOrder;
+		this.billAmount = billAmount;
+	}
+
+public int getBillAmount() {
+		return billAmount;
+	}
+
+	public void setBillAmount(int billAmount) {
+		this.billAmount = billAmount;
+	}
 
 public Expo_Customer() {
 	super();
@@ -61,19 +91,15 @@ public void setCustomer_dateOfOrder(Date customer_dateOfOrder) {
 	this.customer_dateOfOrder = customer_dateOfOrder;
 }
 
-public Expo_Customer(String customer_name, int customer_id, String customer_addres, Date customer_dateOfOrder) {
-	super();
-	this.customer_name = customer_name;
-	this.customer_id = customer_id;
-	this.customer_address = customer_addres;
-	this.customer_dateOfOrder = customer_dateOfOrder;
-}
-
 @Override
 public String toString() {
-	return "Expo_Customer [customer_name=" + customer_name + ", customer_id=" + customer_id + ", customer_addres="
-			+ customer_address + ", customer_dateOfOrder=" + customer_dateOfOrder + "]";
+	return "Expo_Customer [customer_name=" + customer_name + ", customer_id=" + customer_id + ", customer_address="
+			+ customer_address + ", customer_dateOfOrder=" + customer_dateOfOrder + ", billAmount=" + billAmount + "]";
 }
+
+
+
+
 
 
 }
