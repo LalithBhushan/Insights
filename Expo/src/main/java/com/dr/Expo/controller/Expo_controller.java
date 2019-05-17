@@ -55,18 +55,19 @@ public class Expo_controller {
 	
 	
 	@RequestMapping(value="controller/updateCustomer/{id}",method=RequestMethod.PUT,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Expo_Customer> updateCustomer(@PathVariable("id") int id,@RequestBody Expo_Customer ec)
+	public ResponseEntity<Expo_Customer> updateCustomer( @Valid @PathVariable("id") int id,@RequestBody Expo_Customer ec)
 	{
 		
 		Expo_Customer customer =dao.getById(id);
 		if (customer!=null)
 			
-		{	customer.getCustomer_address();
-		customer.getCustomer_name();
-		customer.getCustomer_dateOfOrder();
-		customer.getBillAmount();
+		{	
+			customer.setCustomer_address(ec.getCustomer_address());;
+		customer.setCustomer_name(ec.getCustomer_name());
+		customer.setCustomer_dateOfOrder(ec.getCustomer_dateOfOrder());
+		customer.setBillAmount(ec.getBillAmount());
 		
-		return new ResponseEntity <Expo_Customer> (dao.updateById(ec),HttpStatus.OK);
+		return new ResponseEntity <Expo_Customer> (dao.updateById(customer),HttpStatus.OK);
 		}
 		else
 		

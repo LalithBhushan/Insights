@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -16,7 +18,7 @@ import javax.validation.constraints.NotNull;
 public class Expo_Customer {
 	
 	
-	@NotEmpty(message="Customer Name Is Required")
+	@NotEmpty(message="{CustomerName.NonEmpty}")
 	@Column(name="customer_name")
 	private String customer_name;
  
@@ -24,14 +26,18 @@ public class Expo_Customer {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customer_id;
 	
-	@NotNull(message="Customer Address  Is Required")
+	@NotNull(message="{Address.Required}")
 	@Column(name="customer_address")
 	private String customer_address;
 	
-	@NotNull(message="Date Should Be In YYYY-MM-DD Format ")
+	@NotNull(message="Date.Required ")
 	@Column(name="customer_dateOfOrder")
 private Date customer_dateOfOrder;
 	
+	
+	@NotNull
+    
+	 @Min(3)
 	@Column(name="billAmount")
 	private int billAmount;
 
