@@ -4,3 +4,12 @@ An anonymous class cannot have a constructor. so, there is no need to pass param
 Can be instantiated only once. 
 Cannot be static. 
 Has no name. 
+
+
+
+Deafault methods in interface are where implementations are there by default implemenations no need to override these methods as there will 
+default logic that cant be changed.
+
+When there are two same methods in differnt interface if a class implementing both the interface then call the default methods with interface names
+
+for static methods in interface the methods called by the interface names.

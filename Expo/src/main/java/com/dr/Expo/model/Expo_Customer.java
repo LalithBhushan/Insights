@@ -38,7 +38,7 @@ private Date customer_dateOfOrder;
 	@NotNull
     
 	 @Min(3)
-	@Column(name="billAmount")
+	@Column(name="BillAmount")
 	private int billAmount;
 
 public Expo_Customer(@NotNull(message = "Customer Name Is Required") String customer_name, int customer_id,

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.dr.Expo.model.Expo_Customer;
@@ -17,6 +18,8 @@ public class Expo_DAO {
 	@Autowired
 	private Expo_Repository repo;
 	
+	
+	@Cacheable(value="customerCacheSpace")
 	public List<Expo_Customer> getAll(){
 		
 		return repo.findAll();
