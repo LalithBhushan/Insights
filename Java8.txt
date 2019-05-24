@@ -13,3 +13,42 @@ default logic that cant be changed.
 When there are two same methods in differnt interface if a class implementing both the interface then call the default methods with interface names
 
 for static methods in interface the methods called by the interface names.
+
+actually it is defined that we cant call the static things with class object but i tried to call it it is not showing any error .
+
+Static methods can also be overidden in the implemantation class if we are calling the method with the object.
+
+
+
+Actually creating threads and giving tasks to thread takes more cpu time.
+
+For example if we are creating 1000 tasks we need 1000 threads it takes more cpu time to execute the task by thread.so to overcome this we will use ExecutorService
+ In ExecutiveService we can produce intraduce certain no of threads in pool and share the tasks between the threads it will reduce cpu time consuming. 
+Executor Service :
+
+ The executor service creates and maintains a reusable pool of threads for executing submitted tasks.
+
+  The service also manages a queue, which is used when there are more tasks than the number of threads in the pool and
+ there is a need to queue up tasks until there is a free thread available to execute the task
+
+
+Directly instantiating a ThreadPoolExecutor with 10 threads, a keepAliveTime of 0 milliseconds, and a LinkedBlockingQueue:
+
+ExecutorService executorService = 
+          new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS,
+          new LinkedBlockingQueue<Runnable>());
+
+
+Instantiating a ThreadPoolExecutor with 10 threads using an Executors factory method:
+
+ExecutorService executor = Executors.newFixedThreadPool(10);
+
+
+Instantiating a ThreadPoolExecutor with a single thread using an Executors factory method:
+
+ExecutorService executor = Executors.newSingleThreadExecutor();
+
+
+Instantiating a ThreadPoolExecutor that adds threads to the pool as needed using an Executors factory method:
+
+ExecutorService executor = Executors.newCachedThreadPool();
